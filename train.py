@@ -101,5 +101,8 @@ def run(args):
 
 
 if __name__ == "__main__":
-    args = docopt(__doc__)
+    args = docopt(__doc__,"GNN-FiLM created_dataset")
+    # args = docopt(__doc__,"GNN-FiLM Cora")
+    # args = docopt(__doc__,"GNN-FiLM QM9")
+    args['--quiet'] = False
     run_and_debug(lambda: run(args), enable_debugging=args['--debug'])

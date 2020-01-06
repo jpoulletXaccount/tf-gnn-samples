@@ -6,7 +6,7 @@ import pickle
 
 from models import (Sparse_Graph_Model, GGNN_Model, GNN_FiLM_Model, GNN_Edge_MLP_Model,
                     RGAT_Model, RGCN_Model, RGDCN_Model, RGIN_Model)
-from tasks import Sparse_Graph_Task, QM9_Task, Citation_Network_Task, PPI_Task, VarMisuse_Task
+from tasks import Sparse_Graph_Task, QM9_Task, Citation_Network_Task, PPI_Task, VarMisuse_Task,Nb_Vehicles_Task
 
 
 def name_to_task_class(name: str) -> Tuple[Type[Sparse_Graph_Task], Dict[str, Any]]:
@@ -25,6 +25,8 @@ def name_to_task_class(name: str) -> Tuple[Type[Sparse_Graph_Task], Dict[str, An
         return PPI_Task, {}
     if name == "varmisuse":
         return VarMisuse_Task, {}
+    if name == "created_dataset":
+        return Nb_Vehicles_Task, {"data_kind": "created_dataset"}
 
     raise ValueError("Unknown task type '%s'" % name)
 

@@ -70,6 +70,7 @@ class Citation_Network_Task(Sparse_Graph_Task):
         return test_data
 
     def __load_data(self, data_directory: RichPath):
+        print(data_directory.path)
         assert isinstance(data_directory, LocalPath), "CitationNetworkTask can only handle local data"
         data_path = data_directory.path
         print(" Loading CitationNetwork data from %s." % (data_path,))
