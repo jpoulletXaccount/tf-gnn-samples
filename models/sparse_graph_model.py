@@ -24,7 +24,7 @@ class Sparse_Graph_Model(ABC):
         return {
             'max_nodes_in_batch': 5000,
 
-            'graph_num_layers': 4,
+            'graph_num_layers': 5,
             'graph_num_timesteps_per_layer': 1,
 
             'graph_layer_input_dropout_keep_prob': 0.8,
